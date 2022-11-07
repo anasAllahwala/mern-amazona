@@ -1,5 +1,5 @@
 import data from './Data';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import HomeScreen from './Screens/HomsScreen';
 
 function App() {
@@ -10,9 +10,11 @@ function App() {
           <a href="/">amazona</a>
         </header>
         <main>
-          <Routes path="/" element={<HomeScreen />} />
+          <Route>
+            <Route path="/" element={<HomeScreen />} />
+          </Route>
           <h1>Featured Products</h1>
-          <div className="products">
+          {/* <div className="products">
             {data.Products.map((product) => (
               <div className="product" key={product.slug}>
                 <a href={`/product/${product.slug}`}>
@@ -29,7 +31,7 @@ function App() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </main>
       </div>
     </BrowserRouter>
